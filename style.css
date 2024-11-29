@@ -1,37 +1,120 @@
-body {
-    font-family: Arial, sans-serif;
+/* ===========================
+   Variables Globales
+=========================== */
+:root {
+    --primary-color: #007bff; /* Bleu principal */
+    --secondary-color: #0056b3; /* Bleu foncé */
+    --background-color: #f4f4f9; /* Gris clair */
+    --card-background: #ffffff; /* Fond des sections */
+    --text-color: #333; /* Texte principal */
+    --header-footer-color: white; /* Texte des en-têtes et pieds de page */
+    --border-color: #ddd; /* Bordures */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Ombres légères */
+}
+
+/* ===========================
+   Style de Base
+=========================== */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+    box-sizing: border-box;
 }
 
-/* Header */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* ===========================
+   En-tête (Header)
+=========================== */
 header {
-    background-color: #007bff;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--header-footer-color);
     text-align: center;
     padding: 20px;
+    box-shadow: 0 2px 5px var(--shadow-color);
 }
 
-/* Main content */
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+/* ===========================
+   Contenu Principal (Main)
+=========================== */
 main {
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Sections */
+/* ===========================
+   Sections
+=========================== */
 section {
     margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
-    background-color: #fff;
+    box-shadow: 0 3px 10px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Footer */
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+section h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+/* ===========================
+   Pied de Page (Footer)
+=========================== */
 footer {
     text-align: center;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: var(--header-footer-color);
+    box-shadow: 0 -2px 5px var(--shadow-color);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ===========================
+   Responsivité
+=========================== */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    header, footer {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
 }
